@@ -35,7 +35,7 @@
         {
             "label": "Build",
             "type": "shell",
-            "command": "rm -r dist; cls; .env/Scripts/activate; pyinstaller --noconfirm --clean --onefile --windowed --icon docs/favicon.ico --name 'mdlqrc' mdlqrc/__main__.py --add-data 'docs/favicon.ico;docs'; rm -r build; rm *.spec",
+            "command": "rm -r dist; cls; .env/Scripts/activate; create-version-file metadata.yml --outfile version.txt; pyinstaller --noconfirm --clean --onefile --windowed --icon docs/favicon.ico --name 'mdlqrc' --version-file version.txt mdlqrc/__main__.py --add-data 'docs/favicon.ico;docs'; rm -r build; rm *.spec; rm version.txt",
             "presentation": {
                 "clear": true
             },
